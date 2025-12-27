@@ -1,0 +1,27 @@
+<?php
+echo "Name: Sasank Lama\n";
+class Book {
+    // Properties
+    public $title;
+    public $author;
+
+    // Constructor
+    public function __construct($title, $author) {
+        $this->title = $title;
+        $this->author = $author;
+    }
+
+    // Method to display book details
+    public function displayInfo() {
+        return "Book: '{$this->title}' by {$this->author}";
+    }
+}
+
+// Create book objects
+$book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+$book2 = new Book("1984", "George Orwell");
+
+// Display book information
+echo $book1->displayInfo() . "\n";  // Book: 'The Great Gatsby' by F. Scott Fitzgerald
+echo $book2->displayInfo();         // Book: '1984' by George Orwell
+?>

@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>AJAX Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1 style="text-align: center;">AJAX Example</h1>
+    <button id="fetchData">Fetch Data</button>
+    <table id="dataTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            // Fetch data on button click
+            $('#fetchData').click(function() {
+                $.ajax({
+                    url: 'data.json', // URL of the JSON file or API endpoint
+                    type: 'GET', // HTTP method
+                    dataType: 'json', // Expected data type
+                    success: function(data) {
+                        const tableBody = $('#dataTable tbody');
+                        tableBody.empty(); // Clear previous data
+                        data.forEach(item => {
+                            tableBody.append(`<tr><td>${item.name}</td><td>${item.age}</td><td>${item.city}</td></tr>`);
+                        });
+                        $('#dataTable').show(); // Show the table
+                    },
+                    error: function() {
+                        alert('Error fetching data.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

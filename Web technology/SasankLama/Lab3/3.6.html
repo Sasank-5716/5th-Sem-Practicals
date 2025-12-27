@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Event Handling in JavaScript</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>Event Handling Examples</h1>
+
+    <!-- Button Example -->
+    <button id="clickButton">Click Me!</button>
+    <p id="clickMessage"></p>
+
+    <!-- Input Field Example -->
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput" placeholder="Your name">
+    <p id="nameMessage"></p>
+
+    <!-- Mouse Over Example -->
+    <div class="box" id="hoverBox">Hover Me!</div>
+    <p id="hoverMessage"></p>
+
+    <!-- Form Submission Example -->
+    <form id="myForm">
+        <label for="emailInput">Email:</label>
+        <input type="email" id="emailInput" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="formMessage"></p>
+
+    <script>
+        // Using addEventListener (Recommended Method)
+        const clickButton = document.getElementById("clickButton");
+        clickButton.addEventListener("click", function() {
+            document.getElementById("clickMessage").textContent = "Button clicked!";
+        });
+
+        // Using onevent properties
+        const nameInput = document.getElementById("nameInput");
+        nameInput.oninput = function() {
+            const nameValue = nameInput.value.trim();
+            document.getElementById("nameMessage").textContent = nameValue ? `Hello, ${nameValue}!` : "";
+        };
+
+        // Mouseover Event Example
+        const hoverBox = document.getElementById("hoverBox");
+        hoverBox.addEventListener("mouseover", function() {
+            document.getElementById("hoverMessage").textContent = "Mouse is hovering!";
+            hoverBox.style.backgroundColor = "lightgreen";
+        });
+        hoverBox.addEventListener("mouseout", function() {
+            document.getElementById("hoverMessage").textContent = "";
+            hoverBox.style.backgroundColor = "lightblue";
+        });
+
+        // Form Submission Example
+        const myForm = document.getElementById("myForm");
+        myForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const emailValue = document.getElementById("emailInput").value;
+            if (emailValue) {
+                document.getElementById("formMessage").textContent = `Form submitted successfully with email: ${emailValue}`;
+            } else {
+                document.getElementById("formMessage").textContent = "Please enter a valid email.";
+            }
+        });
+    </script>
+</body>
+</html>

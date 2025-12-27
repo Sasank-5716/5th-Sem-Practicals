@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title>Registration Form with Validation</title>
+    <style>
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>Registration Form</h1>
+    <form onsubmit="return validateForm()">
+        <!-- Name Field -->
+        <div>
+            <label>Full Name:</label>
+            <input type="text" id="name">
+            <span id="nameError" class="error"></span>
+        </div>
+
+        <!-- Age Field -->
+        <div>
+            <label>Age:</label>
+            <input type="number" id="age">
+            <span id="ageError" class="error"></span>
+        </div>
+
+        <!-- Phone Number Field -->
+        <div>
+            <label>Phone Number:</label>
+            <input type="tel" id="phone">
+            <span id="phoneError" class="error"></span>
+        </div>
+
+        <!-- Email Field -->
+        <div>
+            <label>Email:</label>
+            <input type="email" id="email">
+            <span id="emailError" class="error"></span>
+        </div>
+
+        <!-- College Dropdown -->
+        <div>
+            <label>College:</label>
+            <select id="college">
+                <option value="">Select College</option>
+                <option value="Harvard">Harvard University</option>
+                <option value="MIT">Massachusetts Institute of Technology</option>
+                <option value="Stanford">Stanford University</option>
+            </select>
+            <span id="collegeError" class="error"></span>
+        </div>
+
+        <!-- Gender Radio Buttons -->
+        <div>
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <span id="genderError" class="error"></span>
+        </div>
+
+        <!-- Terms Checkbox -->
+        <div>
+            <input type="checkbox" id="terms">
+            <label>I accept all the terms</label>
+            <span id="termsError" class="error"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Reset errors
+            document.querySelectorAll('.error').forEach(e => e.textContent = '');
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const college = document.getElementById('college').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const terms = document.getElementById('terms').checked;
+
+            // Validation Flags
+            let isValid = true;
+
+            // Name Validation
+            if (!name) {
+                document.getElementById('nameError').textContent = 'Name is required';
+                isValid = false;
+            } else if (!/^[a-zA-Z\s]{6,}$/.test(name)) {
+                document.getElementById('nameError').textContent = 'Name must contain only alphabets and spaces, and be at least 6 characters long';
+                isValid = false;
+            }
+
+            // Age Validation
+            if (!age) {
+                document.getElementById('ageError').textContent = 'Age is required';
+                isValid = false;
+            } else if (!/^\d+$/.test(age)) {
+                document.getElementById('ageError').textContent = 'Age must be a number';
+                isValid = false;
+            } else if (age < 18 || age > 50) {
+                document.getElementById('ageError').textContent = 'Age must be between 18 and 50';
+                isValid = false;
+            }
+
+            // Phone Validation
+            if (!phone) {
+                document.getElementById('phoneError').textContent = 'Phone number is required';
+                isValid = false;
+            } else if (!/^(97|98)\d{8}$/.test(phone)) {
+                document.getElementById('phoneError').textContent = 'Phone must be 10 digits starting with 97 or 98';
+                isValid = false;
+            }
+
+            // Email Validation
+            if (!email) {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+            // College Validation
+            if (!college) {
+                document.getElementById('collegeError').textContent = 'College selection is required';
+                isValid = false;
+            }
+
+            // Gender Validation
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Gender selection is required';
+                isValid = false;
+            }
+
+            // Terms Validation
+            if (!terms) {
+                document.getElementById('termsError').textContent = 'You must accept the terms';
+                isValid = false;
+            }
+
+            // Final Validation
+            if (isValid) {
+                alert('Form submitted successfully!');
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

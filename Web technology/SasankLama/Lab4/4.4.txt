@@ -1,0 +1,26 @@
+<?php
+echo "Name: Sasank Lama \n";
+// Function to calculate average
+function calculateAverage(array $numbers): float {
+    if (empty($numbers)) return 0; // Handle empty array
+    
+    $sum = array_sum($numbers);
+    $count = count($numbers);
+    return $sum / $count;
+}
+
+// Test Cases
+$test1 = [10, 20, 30];          // Average: 20
+$test2 = [0, 0, 0, 0];          // Average: 0
+$test3 = [-5, 0, 5];            // Average: 0
+$test4 = [1.5, 2.5, 3.5];       // Average: 2.5
+$test5 = [];                    // Average: 0 (handled)
+$test6 = [100];                 // Average: 100 (single element)
+
+echo "Test 1: " . calculateAverage($test1) . "\n";
+echo "Test 2: " . calculateAverage($test2) . "\n";
+echo "Test 3: " . calculateAverage($test3) . "\n";
+echo "Test 4: " . calculateAverage($test4) . "\n";
+echo "Test 5: " . calculateAverage($test5) . "\n";
+echo "Test 6: " . calculateAverage($test6) . "\n";
+?>

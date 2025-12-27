@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Nested Table with Rowspan and Colspan</title>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>Nested Table with Rowspan and Colspan</h1>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <!-- Outer Table Header -->
+        <tr>
+            <th colspan="3">Outer Table Header (Spanning 3 Columns)</th>
+        </tr>
+        <!-- Outer Table Row -->
+        <tr>
+            <td rowspan="2">Rowspan Cell (Spanning 2 Rows)</td>
+            <td colspan="2">
+                <!-- Nested Table -->
+                <table border="1" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th colspan="2">Nested Table Header (Spanning 2 Columns)</th>
+                    </tr>
+                    <tr>
+                        <td>Nested Cell 1</td>
+                        <td>Nested Cell 2</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <!-- Outer Table Row -->
+        <tr>
+            <td>Outer Cell 1</td>
+            <td>Outer Cell 2</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>jQuery Animation Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        img { width: 100px; height: auto; position: relative; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>jQuery Animation Example</h1>
+    <img id="image" src="../../images/saitama4.jpg" alt="Sample Image">
+    <br>
+    <button id="moveRight">Move Right</button>
+    <button id="moveLeft">Move Left</button>
+    <button id="resize">Resize</button>
+    <button id="stop">Stop Animation</button>
+
+    <script>
+        $(document).ready(() => {
+            $("#moveRight").click(() => $("#image").animate({ left: '+=100px' }, 1000)); // Move right
+            $("#moveLeft").click(() => $("#image").animate({ left: '-=100px' }, 1000)); // Move left
+            $("#resize").click(() => $("#image").animate({ width: '200px', height: '200px' }, 1000)); // Resize
+            $("#stop").click(() => $("#image").stop()); // Stop ongoing animation
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Effects Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        img { width: 300px; height: auto; margin: 20px; }
+        button { margin: 5px; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>jQuery Effects on Image</h1>
+    <img id="image" src="../../images/saitama3.png" alt="Sample Image">
+    <br>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="fadeIn">Fade In</button>
+    <button id="stop">Stop Animation</button>
+
+    <script>
+        $(document).ready(() => {
+            $("#hide").click(() => $("#image").hide(1000)); // Hide image
+            $("#show").click(() => $("#image").show(1000)); // Show image
+            $("#fadeOut").click(() => $("#image").fadeOut(1000)); // Fade out image
+            $("#fadeIn").click(() => $("#image").fadeIn(1000)); // Fade in image
+            $("#stop").click(() => $("#image").stop()); // Stop ongoing animations
+        });
+    </script>
+</body>
+</html>

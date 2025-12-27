@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Computer Components List</title>
+    <style>
+        .component-list {
+            list-style-type: none; 
+            padding-left: 0;
+        }
+        .component-list li {
+            padding: 12px 20px;
+            margin: 8px 0;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .component-list li:nth-child(1) {
+            background-color: #f0f4ff;
+            border-color: #4a90e2;
+            color: #2c3e50;
+        }
+        .component-list li:nth-child(2) {
+            background-color: #fff0f5;
+            border-color: #ff69b4;
+            color: #8b0000;
+        }
+        .component-list li:nth-child(3) {
+            background-color: #f0fff4;
+            border-color: #3cb371;
+            color: #006400;
+        }
+        .component-list li:nth-child(4) {
+            background-color: #fff8dc;
+            border-color: #ffa500;
+            color: #8b4513;
+        }
+        .component-list li:nth-child(5) {
+            background-color: #f5f5f5;
+            border-color: #808080;
+            color: #2f4f4f;
+        }
+        .component-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        }
+        .component-list li::before {
+            content: "•";
+            color: inherit;
+            font-size: 1.5em;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <ul class="component-list">
+        <li>A.mouse</li>
+        <li>B.keyboard</li>
+        <li>C.monitor</li>
+        <li>D.Printer</li>
+        <li>E.Touchpad</li>
+    </ul>
+</body>
+</html>

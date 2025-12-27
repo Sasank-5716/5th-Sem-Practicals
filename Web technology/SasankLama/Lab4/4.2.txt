@@ -1,0 +1,13 @@
+<?php
+echo "Name: Sasank Lama\n";
+$num = 10;          // Integer
+$price = 4.99;      // Float
+$text = "Hi";       // String
+
+// Constants
+define("TAX_RATE", 0.15);
+
+// Output
+echo "$text! Number: $num, Price: $price, Tax: " . (TAX_RATE * 100) . "%";
+?>
+

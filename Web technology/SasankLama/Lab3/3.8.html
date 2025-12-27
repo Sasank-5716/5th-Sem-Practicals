@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>jQuery Events</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>.box{width:100px;height:100px;background:lightblue;margin:20px;text-align:center;line-height:100px}</style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>jQuery Events</h1>
+    
+    <button id="clickBtn">Click Me</button><p id="clickMsg"></p>
+    <div class="box">Hover</div><p id="hoverMsg"></p>
+    <input id="textInput" placeholder="Type here"><p id="textMsg"></p>
+    <form id="form"><input required><button>Submit</button></form><p id="formMsg"></p>
+
+    <script>
+    $(() => {
+        $("#clickBtn").click(() => $("#clickMsg").text("Clicked!"));
+        $(".box").mouseout(() => $("#hoverMsg").text("Mouse out!"));
+        $("#textInput").keyup(e => $("#textMsg").text("Typing: " + e.target.value));
+        $("#form").submit(e => {
+            e.preventDefault();
+            $("#formMsg").text($("#form input").val() ? "Submitted!" : "Error!");
+        });
+    });
+    </script>
+</body>
+</html>

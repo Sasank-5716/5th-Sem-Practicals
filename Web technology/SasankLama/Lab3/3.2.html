@@ -1,0 +1,59 @@
+<html>
+<head>
+   <title>JavaScript Objects and Constructors</title>
+    <script>
+        const car = {
+            brand: "Toyota",
+            model: "Corolla",
+            year: 2020,
+            displayDetails: function() {
+                return `Car: ${this.brand} ${this.model} (${this.year})`;
+            }
+        };
+        car.color = "Blue";
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.greet = function() {
+                return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+            };
+        }
+        const person1 = new Person("Sasank", 22);
+        const person2 = new Person("Bob", 30);
+
+        class Animal {
+            constructor(type, sound) {
+                this.type = type;
+                this.sound = sound;
+            }
+             makeSound() {
+                return `${this.type} says "${this.sound}"`;
+            }
+        }
+        const dog = new Animal("Dog", "Woof");
+        const cat = new Animal("Cat", "Meow");
+        function displayExamples() {
+            document.getElementById("example1").textContent = car.displayDetails();
+            document.getElementById("example2").textContent = `Car color: ${car.color}`;
+            document.getElementById("example3").textContent = person1.greet();
+            document.getElementById("example4").textContent = dog.makeSound();
+        }
+    </script>
+</head>
+<body onload="displayExamples()">
+    <p>Name: Sasank Lama</p>
+    <h1>JavaScript Objects and Constructors</h1>
+
+    <h2>Example 1: Object Literal</h2>
+    <p id="example1"></p>
+
+    <h2>Example 2: Adding Properties Dynamically</h2>
+    <p id="example2"></p>
+
+    <h2>Example 3: Constructor Function</h2>
+    <p id="example3"></p>
+
+    <h2>Example 4: Using Classes</h2>
+    <p id="example4"></p>
+</body>
+</html>

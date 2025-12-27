@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Q.3 Array</title>
+  </head>
+  <body>
+    <p>Name: Sasank Lama</p>
+    <script>
+      var twoDArray = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      document.write("<table border='1' cellspacing='0' cellpadding='5'>");
+      for (var i = 0; i < twoDArray.length; i++) {
+        document.write("<tr>");
+        for (var j = 0; j < twoDArray[i].length; j++) {
+          document.write("<td>" + twoDArray[i][j] + "</td>");
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    </script>
+  </body>
+</html>

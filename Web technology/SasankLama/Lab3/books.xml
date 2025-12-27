@@ -1,0 +1,10 @@
+<!-- HTML to load XML -->
+<script>
+fetch('books.xml')
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(data, "text/xml");
+    console.log(xmlDoc.querySelector('title').textContent); // "The Great Gatsby"
+  });
+</script>

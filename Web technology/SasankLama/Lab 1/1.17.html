@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio and Video Demo</title>
+</head>
+<body>
+    <p><b>Name: Sasank Lama</b></p>
+
+    <h1>Audio and Video Demonstration</h1>
+
+    <!-- Audio Section -->
+    <h2>Audio Example</h2>
+    <audio controls autoplay loop muted preload="metadata">
+        <source src="audio.mp3" type="audio/mpeg">
+        <source src="audio.ogg" type="audio/ogg">
+        <!-- Fallback for unsupported browsers -->
+        Your browser does not support the audio element. 
+        <a href="audio.mp3">Download the audio file</a>.
+    </audio>
+
+    <!-- Explanation of Audio Attributes -->
+    <p><strong>Attributes used:</strong></p>
+    <ul>
+        <li><strong>controls:</strong> Adds playback controls (play, pause, volume).</li>
+        <li><strong>autoplay:</strong> Automatically plays the audio when the page loads.</li>
+        <li><strong>loop:</strong> Replays the audio after it finishes.</li>
+        <li><strong>muted:</strong> Starts the audio muted.</li>
+        <li><strong>preload:</strong> Specifies how the browser should preload the audio (e.g., metadata).</li>
+    </ul>
+
+    <!-- Video Section -->
+    <h2>Video Example</h2>
+    <video controls autoplay loop muted preload="auto" width="640" height="360">
+        <source src="video.mp4" type

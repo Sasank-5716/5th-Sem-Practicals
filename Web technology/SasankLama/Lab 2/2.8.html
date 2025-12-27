@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title>Styled Horizontal Menu</title>
+    <style>
+       .menu {
+            display: flex; 
+            justify-content: center;
+            list-style-type: none; 
+            margin: 20px;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 0 15px; 
+        }
+
+        .menu a {
+            text-decoration: none; 
+            padding: 10px 20px;
+            border: 2px solid #333; 
+            border-radius: 5px;
+            font-size: 16px; 
+            font-weight: bold;
+        }
+        .menu a:nth-child(1) {
+            background-color: #f1c40f;
+            color: #34495e;
+        }
+
+        .menu a:nth-child(2) {
+            background-color: #2ecc71;
+            color: #ffffff; 
+        }
+
+        .menu a:nth-child(3) {
+            background-color: #3498db; 
+            color: #ecf0f1; 
+        }
+
+        .menu a:nth-child(4) {
+            background-color: #9b59b6; 
+            color: #ffffff; 
+        }
+
+        .menu a:nth-child(5) {
+            background-color: #e74c3c; 
+            color: #ffffff; 
+        }
+        .menu a:hover {
+            color: #000000; 
+            font-size: 18px; 
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</body>
+</html>

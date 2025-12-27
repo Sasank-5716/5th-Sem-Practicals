@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Nested List Example</title>
+    <style>
+        /* General List Styles */
+        ul {
+            list-style-type: square; /* Square bullets for the main list */
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #f4f4f9;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Nested List Styles */
+        ul ul {
+            list-style-type: circle; /* Circle bullets for nested lists */
+            padding-left: 30px; /* Indentation for nested lists */
+            background-color: #e6e6fa; /* Light lavender background for nested lists */
+            border-left: 2px dashed #666; /* Dashed border for nested lists */
+        }
+
+        ul ul li {
+            color: #555; /* Slightly lighter color for nested list items */
+        }
+    </style>
+</head>
+<body>
+    <p>Name: Sasank Lama</p>
+    <h1>Nested List Example</h1>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2
+            <ul>
+                <li>Subitem 2.1</li>
+                <li>Subitem 2.2</li>
+                <li>Subitem 2.3</li>
+            </ul>
+        </li>
+        <li>Item 3
+            <ul>
+                <li>Subitem 3.1</li>
+                <li>Subitem 3.2
+                    <ul>
+                        <li>Subitem 3.2.1</li>
+                        <li>Subitem 3.2.2</li>
+                    </ul>
+                </li>
+                <li>Subitem 3.3</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

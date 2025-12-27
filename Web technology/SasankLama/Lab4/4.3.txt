@@ -1,0 +1,12 @@
+<?php
+echo "Name: Sasank Lama\n";
+$number = 25; // Change this value to test different numbers
+
+if ($number > 0) {
+    echo "$number is positive";
+} elseif ($number < 0) {
+    echo "$number is negative";
+} else {
+    echo "The number is zero";
+}
+?>
